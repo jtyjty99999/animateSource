@@ -1,0 +1,110 @@
+﻿{"urlList":[{
+			"name" : "argularjs中文教程",
+			"description" : "由浅入深讲解argularjs 这个mvvm框架",
+			"type" : "库与框架",
+			"url" : "http://www.angularjs.cn/",
+			"id" : 2
+		}, {
+			"name" : "jquery API",
+			"description" : "JQuery",
+			"type" : "库与框架",
+			"url" : "http://www.jquery.com/",
+			"id" : 1
+		}, {
+			"name" : "JQuery mansonry",
+			"description" : "jquery不规则格子布局框架",
+			"type" : "库与框架",
+			"url" : "http://masonry.desandro.com/",
+			"id" : 3
+		}, {
+			"name" : "web缓存机制概述",
+			"description" : "来自alloyteam的缓存系列文章",
+			"type" : "web技术",
+			"url" : "http://www.alloyteam.com/2012/03/web-cache-1-web-cache-overview/",
+			"id" : 4
+		}, {
+			"name" : "SVG 让web图形独立于分辨率",
+			"description" : "svg在web图形上的应用",
+			"type" : "web技术",
+			"url" : "http://www.uedreamer.com/?p=228",
+			"id" : 5
+		}, {
+			"name" : "JAVASCRIPT FUNCTIONS",
+			"description" : "对javascript function对象的一篇很好的讲解，来自《Pro JavaScript with Mootools》",
+			"type" : "js技术",
+			"url" : "http://www.osmn00.com/translation/240.html",
+			"id" : 6
+		}, {
+			"name" : "fiddler教程",
+			"description" : "前端调试利器fiddler的教程",
+			"type" : "工具",
+			"url" : "http://www.cnblogs.com/TankXiao/archive/2012/02/06/2337728.html#introduce",
+			"id" : 7
+		}, {
+			"name" : "mozilla developer network",
+			"description" : "MDN火狐前端技术社区",
+			"type" : "技术社区",
+			"url" : "https://developer.mozilla.org/zh-CN/",
+			"id" : 8
+		}, {
+			"name" : "正则表达式三十分钟入门",
+			"description" : "正则的一个很好的教程",
+			"type" : "编程",
+			"url" : "http://deerchao.net/tutorials/regex/regex.htm/",
+			"id" : 9
+		}, {
+			"name" : "可用性更好的CSS隐藏文字技术(CSS图片替换文字)",
+			"description" : "CSS图片替换文字总结",
+			"type" : "css技术",
+			"url" : "http://www.iyunlu.com/view/css-xhtml/62.html",
+			"id" : 10
+		}, {
+			"name" : "HTTP协议之缓存",
+			"description" : "关于浏览器缓存的介绍以及控制",
+			"type" : "web技术",
+			"url" : "http://www.cnblogs.com/TankXiao/archive/2012/11/28/2793365.html",
+			"id" : 11
+		}, {
+			"name" : "由浅入深漫谈margin属性",
+			"description" : "对css的margin属性进行的深入剖析",
+			"type" : "css技术",
+			"url" : "http://www.planabc.net/2007/03/18/css_attribute_margin/",
+			"id" : 12
+		}, {
+			"name" : "fiddler前端开发利器",
+			"description" : "Fiddler前端工具介绍",
+			"type" : "工具",
+			"url" : "http://www.cnblogs.com/yuzhongwusan/archive/2012/07/20/2601306.html",
+			"id" : 13
+		}, {
+			"name" : "ecma5新特性",
+			"description" : "ecma5新特性介绍及示例代码",
+			"type" : "js技术",
+			"url" : "http://www.cnblogs.com/aaa6818162/archive/2012/09/09/2677280.html",
+			"id" : 14
+		}, {
+			"name" : "编写快速、高效的JavaScript代码",
+			"description" : "详细介绍javascript代码解析及优化",
+			"type" : "js技术",
+			"url" : "http://blog.jobbole.com/31951/",
+			"id" : 15
+		}, {
+			"name" : "前端开发中的HTML优化",
+			"description" : "html的编码规范及优化",
+			"type" : "web技术",
+			"url" : "http://www.kekaku.com/webdevelop/502",
+			"id" : 16
+		}, {
+			"name" : "复杂应用的 CSS 性能分析和优化建议",
+			"description" : "css性能分析工具和优化的介绍",
+			"type" : "css技术",
+			"url" : "http://orzpoint.com/profiling-css-and-optimization-notes/",
+			"id" : 17
+		}, {
+			"name" : "使用 AMD、CommonJS 及 ES Harmony 编写模块化的 JavaScript",
+			"description" : "一篇非常详细的介绍模块化javascript开发的文章",
+			"type" : "js技术",
+			"url" : "http://justineo.github.com/singles/writing-modular-js/",
+			"id" : 18
+		}
+	]}

@@ -1,0 +1,185 @@
+﻿          <div class="hero-unit">
+            <h1>javascript规范</h1>
+            <p>书写javascript规范及jquery一些要注意的地方。以可读性作为首要要求。</p>
+            <p>主要参考Google JavaScript代码风格指南。</p>
+          </div>
+          <div class="row-fluid">
+            <div class="span12">
+			<div class="rule">
+				<h2>变量声明</h2>
+				<p class="lead">变量声明都要加上var关键字</p>
+				<p class="text-success">如果你不指定关键字var, 该变量就会暴露在全局作用域（window）中，这很可能会覆盖全局作用域中的同名变量</p>
+				<pre>
+var speed = data.speed;
+				</pre>
+				<p class="muted">参考资料:<a href=" http://www.cnblogs.com/snandy/archive/2011/03/19/1988626.html"> JavaScript中两种类型的全局对象/函数</a></p>
+				<p class="muted">参考资料:<a href=" http://www.cnblogs.com/snandy/archive/2011/03/19/1988284.html"> JavaScript声明全局变量三种方式的异同</a></p>
+			</div>
+			<div class="rule">
+				<h2>全局变量</h2>
+				<p class="lead">尽量<strong>不</strong>使用全局变量。</p>
+				<p class="text-success">全局变量使用不当，在合并代码等情况下可能会造成冲突。因此除了存储地图对象的变量，尽量不要使用。如果必须使用时请约定命名空间，规范文档。</p>
+				<pre>
+var hello = "hello world";//不要这样使用
+(function(){
+var hello = "hello world";
+}())//推荐这样使用
+				</pre>
+				<p class="muted">参考资料:<a href=" http://blog.goddyzhao.me/post/11141710441/variable-object"> 变量对象（Variable object）</a></p>
+			</div>
+			<div class="rule">
+				<h2>命名规范</h2>
+				<p class="lead">变量及方法命名均以<strong>驼峰式</strong>来命名。私有的属性，变量和方法都应该以<strong>下划线</strong>开头。</p>
+				<p class="text-success">变量名应该在让人看懂的基础上尽量短，不要一写一坨。</p>
+				<pre>
+function getUserSpeed(){
+var _initSpeed;
+}
+				</pre>
+			</div>
+			<div class="rule">
+				<h2>注释</h2>
+				<p class="lead">方法必须要增加<strong>注释</strong>。注释的格式按照jsDoc的格式来书写。</p>
+				<p class="text-success">注释可不需要按照下面书写的那样复杂，但一定要注意几个必须包含的内容：</p>
+				<p class="text-success">@param @argument 指定参数名和说明来描述一个函数参数 </p>
+				<p class="text-success">@returns 描述函数的返回值 </p>
+				<p class="text-success">@description 简单描述函数的作用</p>
+				<p class="text-success">@author  作者</p>
+				<p class="text-success">@version 版本号</p>
+				<pre>
+/** 
+* @fileOverview 简单的类对象标注示例 
+* @author <a href="llying.javaeye.com">llying</a> 
+* @version 0.1 
+*/ 
+/** 
+* @author llying 
+* @constructor Person 
+* @description 一个Person类 
+* @see The <a href="#">llying</a >. 
+* @example new Parent(“张三”,15); 
+* @since version 0.1 
+* @param {String} username 姓名 
+* @param {Num} age 年龄 
+*/ 
+function Person(username,age) 
+{ 
+/** 
+* @description {Sting} 姓名 
+* @field 
+*/ 
+this.username = username; 
+/** 
+* @description {Num} 年龄 
+* @field 
+*/ 
+this.age = age 
+/** 
+* @description 弹出say内容 
+* @param {String} content 内容 
+*/ 
+this.say = function(content) 
+{ 
+alert(this.username+" say :"+content); 
+} 
+/** 
+* @description 返回json格式的对象 
+* @return {String} json格式 
+* @see Person#say 
+*/ 
+this.getJson = function(){ 
+return "{name:"+this.username+",age"+this.age+"}"; 
+} 
+} 
+				</pre>
+				<p class="muted">参考资料:<a href="http://www.jb51.net/article/26249.htm">JSDoc 介绍使用规范JsDoc的使用介绍</a></p>
+			</div>
+			<div class="rule">
+				<h2>分号</h2>
+				<p class="lead">每一语句的结尾都要以<strong>分号</strong>来结束。</p>
+				<p class="text-success">养成良好的习惯，避免代码解析及压缩合并时出现错误。</p>
+				<p class="text-success">JS语句以分号作为结束符使得JS解释器解析，如果省略分号，就会由JS解释器确定语句的结尾。</p>
+				<p class="text-success">译者注：加上分号也会在某些情况下增进代码的性能，因为这样解析器就不必再花时间推测应该在哪里插入分号了（取自《Javascript高级程序设计》）</p>
+
+				<pre>
+var fn=function (){
+      alert(123);
+    };
+     (fn);
+var fn=function (){
+      alert(123);
+    }
+     (fn);//两段代码是截然不同的！！
+				</pre>
+				<p class="muted">参考资料:<a href=" http://www.zhihu.com/question/20298345">JavaScript 语句后应该加分号么？</a></p>
+			</div>
+			<div class="rule">
+				<h2>函数声明与函数表达式</h2>
+				<p class="lead">要区分函数声明与函数表达式。<strong>不要</strong>使用块内函数声明。</p>
+				<p class="text-success">函数声明与函数表达式的区别请学习参考链接。并且各种引擎对快内函数声明的实现不同。</p>
+				<pre>
+if (x) {
+  function foo() {}
+}//只有屌丝才这样做。
+if (x) {
+  var foo = function() {}
+}//非得快内定义请用函数表达式。
+				</pre>
+				<p class="muted">参考资料:<a href="http://www.cn-cuckoo.com/main/wp-content/uploads/2009/12/named-function-expressions-demystified.html">命名函数表达式探秘</a></p>
+				<p class="muted">参考资料:<a href="http://blog.goddyzhao.me/post/11273713920/functions">函数（Functions）</a></p>
+				<p class="muted">参考资料:<a href="w3help.org/zh-cn/causes/SJ9002">Firefox 对条件判断语句块内的函数声明的处理与其他浏览器有差异</a></p>
+			</div>
+			<div class="rule">
+				<h2>基本包装类型</h2>
+				<p class="lead"><strong>不要</strong>使用基本包装类型来创建number string boolean对象。</p>
+				<p class="text-success">他的类型判断时会有问题。但可以在类型转换中使用，很好用</p>
+				<pre>
+var x = Boolean(0);
+if (x) {
+  alert('hi');  // 不会弹框显示 hi
+}
+typeof Boolean(0) == 'boolean';//成功转换
+typeof new Boolean(0) == 'object';//这里出问题了
+				</pre>
+				<p class="muted">参考资料:<a href="http://99jty.com/?p=879">基本类型的包装对象</a></p>
+				</div>
+			<div class="rule">
+				<h2>内置对象原型</h2>
+				<p class="lead"><strong>禁止</strong>修改内置对象的原型。</p>
+				<p class="text-success">随便修改内置对象的原型会遇到很多不可预料的问题。</p>
+				<pre>
+Array.prototype.a = function(){}//禁止
+Object.prototype.b = function(){}//禁止
+				</pre>
+				</div>
+			<div class="rule">
+				<h2>字面量</h2>
+				<p class="lead"><strong>推荐</strong>使用[],{}的方式代替new Array(),new Object。</p>
+				<p class="text-success">可读性会更好。</p>
+				<pre>
+var a = new Array();//不推荐
+var a = [];//推荐
+var b = new Object();//不推荐
+var b = {};//推荐
+				</pre>
+				<p class="muted">参考资料:<a href="http://99jty.com/?p=879">基本类型的包装对象</a></p>
+				</div>
+			<div class="rule">
+				<h2>多行字符串</h2>
+				<p class="lead"><strong>推荐</strong>使用+号运算符来连接每一行。</p>
+				<p class="text-success">可读性会更好。</p>
+				<pre>
+var myString = '随便修改内置对象的原型会遇到很多不可预料的问题。\
+                随便修改内置对象的原型会遇到很多不可预料的问题。 \
+                随便修改内置对象的原型会遇到很多不可预料的问题。 \
+                随便修改内置对象的原型会遇到很多不可预料的问题。 \
+随便修改内置对象的原型会遇到很多不可预料的问题。'; //不推荐
+var myString = '随便修改内置对象的原型会遇到很多不可预料的问题。 '
++'随便修改内置对象的原型会遇到很多不可预料的问题。'
++'随便修改内置对象的原型会遇到很多不可预料的问题。'
++'随便修改内置对象的原型会遇到很多不可预料的问题。'
++'随便修改内置对象的原型会遇到很多不可预料的问题。'; //推荐					
+				</pre>
+				</div>
+            </div><!--/span-->
+          </div><!--/row-->

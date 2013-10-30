@@ -1,0 +1,72 @@
+﻿<div class="row-fluid">
+            <h1>前端资源库</h1>
+			
+				 <div class="navbar-search pull-left form-inline">
+				 <label for="searchIn">搜索</label>
+				<input ng-model="query" type="text" class="search-query" placeholder="Search" name="searchIn" ng-change="search()">
+				<span>排序方式:</span><select ng-model="orderProp">
+				  <option value="name">名称</option>
+				  <option value="type" >类别</option></select>
+				</div>
+
+				<table class="table">
+				<caption>前端资源库</caption>
+				<thead>
+				<tr>
+				<th>名称</th>
+				<th>描述</th>
+				<th>类别</th>
+				<th>链接</th>
+				<th>操作</th>
+				</tr>
+				</thead>
+					<tbody>
+						<tr ng-repeat="list in pagedUrls[currentPage] | filter:query | orderBy:orderProp" ng-controller="changeFn">
+							<td class="span2"><span ng-hide="isModifying">{{list.name}}</span><div class="change" ng-show="isModifying"><input  class="span12 type="text" name="" id="" value="{{list.name}}" ng-model="list.name"/></div></td>
+							<td class="span2"><span ng-hide="isModifying">{{list.description}}</span><div class="change" ng-show="isModifying"><input  class="span12 type="text" name="" id="" value="{{list.description}}" ng-model="list.description"/></td>
+							<td class="span2"><span ng-hide="isModifying">{{list.type}}</span><div class="change" ng-show="isModifying"><input  class="span12 type="text" name="" id="" value="{{list.type}}" ng-model="list.type"/></td>
+							<td class="span4"><span ng-hide="isModifying"><a href="">{{list.url}}</span></a><div class="change" ng-show="isModifying"><input  class="span12 type="text" name="" id="" value="{{list.url}}" ng-model="list.url"/></td>
+							<td class="span2"><input type="button" value="{{marker}}" ng-click = "changeModifying()"/><input type="button" value="删除" ng-click="remove(list.name)"/></td>
+						</tr>
+					</tbody>
+						<tfoot>
+					  <td colspan="6">
+						  <div class="pagination pull-right">
+							  <ul>
+								  <li ng-class="{disabled: currentPage == 0}">
+									  <a ng-click="prevPage()">« Prev</a>
+								  </li>
+								  <li ng-repeat="i in pages" ng-class="{active: i == currentPage+1}" ng-click="setPage()">
+									  <a>{{i}}</a>
+								  </li>
+								  <li ng-class="{disabled: currentPage == pagedUrls.length - 1}">
+									  <a ng-click="nextPage()">Next »</a>
+								  </li>
+							  </ul>
+						  </div>
+					  </td>
+				  </tfoot>
+				</table>
+				<table class="table">
+				<caption>添加新条目</caption>
+				<thead>
+				<tr>
+				<th>名称</th>
+				<th>描述</th>
+				<th>类别</th>
+				<th>链接</th>
+				</tr>
+				</thead>
+					<tbody>
+						<tr >
+							<td><input type="text" name="" id="" ng-model = "newName"/></td>
+							<td><input type="text" name="" id="" ng-model = "newDescription"/></td>
+							<td><input type="text" name="" id="" ng-model = "newType"/></td>
+							<td><input type="text" name="" id="" ng-model = "newLink"/></td>
+						</tr>
+						<tr >
+							<td><input type="button" value="添加新条目" ng-click = "addUrl(newName,newDescription,newType,newLink)"/></td>
+						</tr>
+					</tbody>
+				</table>
+</div>

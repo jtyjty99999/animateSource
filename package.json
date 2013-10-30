@@ -1,0 +1,12 @@
+{
+  "name": "F2E-specification",
+  "version": "0.0.0",
+  "description": "specification",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "99",
+  "license": "MIT"
+}
