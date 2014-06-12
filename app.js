@@ -2,14 +2,13 @@
   , app = express()
   , url = require('url')
   , path = require('path');
-  app.configure(function(){
+  
+  var morgan  = require('morgan');
+  app.use(morgan());
+  
   app.set('port', process.env.PORT || 3000);//
-  app.use(express.favicon());
-  app.use(express.logger('dev'));
-  app.use(express.bodyParser());//解析客户端请求
-  app.use(express.methodOverride());
   app.use(express.static(path.join(__dirname, 'public')));//静态文件支持
-});
+
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/public/index.html');//利用express做跳转
 });

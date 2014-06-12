@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">上海语镜前端开发中心</a>
+          <a class="brand" href="#">阿里国际站动画专题站</a>
         </div>
       </div>
     </div>
@@ -54,18 +54,17 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header">规范</li>
-              <li><a href="#/cssRule">css编码规范</a></li>
-              <li><a href="#/cssSolution">css解决方案</a></li>
-              <li><a href="#/jsRule">js编码规范</a></li>
-              <li><a href="#/document">重要参考文档</a></li>
+              <li class="nav-header">动画系列</li>
+              <li><a href="#/ani-course">教程与效果库</a></li>
+              <li><a href="#/ani-online">在线动画库</a></li>
+              <li><a href="#/ani-lib">动画框架</a></li>
+              <li><a href="#/tools">动画工具</a></li>
+			   <li class="nav-header">数据可视化</li>
+              <li><a href="#/dv-lib">数据可视化类库</a></li>
+              <li><a href="#/dv-effect">在线效果</a></li>
+			  <li class="active"><a href="#/resource">前端资源库</a></li>
+			   <li class="nav-header">项目经验</li>
               <li><a href="#/experience">项目经验与解决方案</a></li>
-              <li class="nav-header">日常工具</li>
-              <li><a href="#">编码工具</a></li>
-              <li><a href="#">项目管理</a></li>
-              <li><a href="#">发布</a></li>
-              <li class="nav-header">资源</li>
-              <li class="active"><a href="#/resource">前端资源库</a></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
@@ -100,14 +99,17 @@
 
 <script type="text/javascript">
 
+
 angular.module('project',[]).config(function($routeProvider) {
     $routeProvider.
       when('/resource', {controller:urlListCtrl, templateUrl:'resource.html'}).
-      when('/cssRule', {controller:cssRuleCtrl, templateUrl:'cssRule.html'}).
-      when('/cssSolution', {controller:cssSolutionCtrl, templateUrl:'cssSolution.html'}).
-      when('/jsRule', {controller:jsRuleCtrl, templateUrl:'jsRule.html'}).
-      when('/document', {controller:jsRuleCtrl, templateUrl:'document.html'}).
-      when('/experience', {controller:jsRuleCtrl, templateUrl:'experience.html'}).
+      when('/ani-course', {controller:simpleCtrl, templateUrl:'ani-course.html'}).
+      when('/ani-online', {controller:simpleCtrl, templateUrl:'ani-online.html'}).
+      when('/ani-lib', {controller:simpleCtrl, templateUrl:'ani-lib.html'}).
+      when('/tools', {controller:simpleCtrl, templateUrl:'tools.html'}).
+      when('/dv-lib', {controller:simpleCtrl, templateUrl:'dv-lib.html'}).
+      when('/dv-effect', {controller:simpleCtrl, templateUrl:'dv-effect.html'}).
+      when('/experience', {controller:simpleCtrl, templateUrl:'experience.html'}).
       otherwise({redirectTo:'/'});
   });
 
@@ -188,9 +190,9 @@ var urlListCtrl = ['$scope', '$http','$filter',function ($scope, $http,$filter) 
 ];
 
 
-var cssRuleCtrl = ['$scope', '$http','$filter',function ($scope, $http,$filter) {}];
-var jsRuleCtrl = ['$scope', '$http','$filter',function ($scope, $http,$filter) {}];
-var cssSolutionCtrl = ['$scope', '$http','$filter',function ($scope, $http,$filter) {}];
+var simpleCtrl = ['$scope', '$http','$filter',function ($scope, $http,$filter) {
+
+}];
 
 function changeFn($scope) {
 	$scope.isModifying = false;
